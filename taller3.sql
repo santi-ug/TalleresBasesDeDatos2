@@ -61,3 +61,47 @@ DELETE FROM productos WHERE codigo = 3;
 
 
 ROLLBACK;
+
+
+
+
+
+
+BEGIN;
+
+
+INSERT INTO clientes (nombre, id, edad, correo) VALUES ('Manuel', 1, 20, 'Manuel@gmail.com');
+INSERT INTO clientes (nombre, id, edad, correo) VALUES ('Alzate', 2, 22, 'Alzate@gmail.com');
+INSERT INTO clientes (nombre, id, edad, correo) VALUES ('Juliana', 3, 45, 'Juliana@gmail.com');
+
+INSERT INTO productos (nombre, codigo, stock, valor_unitario) VALUES ('aguacate', 1, 5, 20000);
+INSERT INTO productos (nombre, codigo, stock, valor_unitario) VALUES ('mango', 2, 7, 18000);
+INSERT INTO productos (nombre, codigo, stock, valor_unitario) VALUES ('helado', 3, 22, 5000);
+
+INSERT INTO pedidos (id, fecha, cantidad, valor_total, producto_id, cliente_id) VALUES (1, CAST('2020-10-29' AS date), 3, 60000, 1, 1);
+INSERT INTO pedidos (id, fecha, cantidad, valor_total, producto_id, cliente_id) VALUES (2, CAST('2022-02-19' AS date), 3, 15000, 3, 3);
+INSERT INTO pedidos (id, fecha, cantidad, valor_total, producto_id, cliente_id) VALUES (3, CAST('2024-07-12' AS date), 1, 18000, 2, 2);
+
+SAVEPOINT punto_a;
+
+UPDATE clientes SET nombre = 'Juan Manuel' WHERE nombre = 'Manuel';
+UPDATE clientes SET edad = 42 WHERE nombre = 'Alzate';
+
+UPDATE productos SET valor_unitario = 22000 WHERE nombre = 'mango';
+UPDATE productos SET stock = 12 WHERE nombre = 'helado';
+
+UPDATE pedidos SET valor_total = 22000 WHERE id = 3;
+UPDATE pedidos SET cantidad = 5 WHERE id = 2;
+
+
+
+DELETE FROM pedidos WHERE id = 2;
+
+DELETE FROM clientes WHERE id = 3;
+
+DELETE FROM productos WHERE codigo = 3;
+
+
+
+ROLLBACK TO SAVEPOINT punto_a;
+COMMIT;
