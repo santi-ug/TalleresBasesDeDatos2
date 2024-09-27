@@ -47,7 +47,7 @@ BEGIN
 	SELECT stock INTO v_producto_stock FROM productos WHERE codigo = p_producto_id;
 	
 	IF v_producto_stock >= p_cantidad_compra THEN
-		DBMS_OUTPUT.PUT_LINE('Si existe suficiente stock';
+		DBMS_OUTPUT.PUT_LINE('Si existe suficiente stock');
 
 	ELSE
 		DBMS_OUTPUT.PUT_LINE('No existe suficiente stock');
