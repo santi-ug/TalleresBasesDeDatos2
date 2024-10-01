@@ -11,7 +11,7 @@ import java.sql.*;
  *
  * @author santi
  */
-public class Taller11BDD2 {
+public class taller11 {
 
     /**
      * @param args the command line arguments

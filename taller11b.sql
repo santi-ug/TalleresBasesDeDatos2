@@ -46,7 +46,7 @@ INSERT INTO facturas (id, fecha, cantidad, valor_total, pedido_estado, producto_
 INSERT INTO facturas (id, fecha, cantidad, valor_total, pedido_estado, producto_id, cliente_id) VALUES (2, TO_DATE('2022-02-19', 'YYYY-MM-DD'), 3, 15000, 'BLOQUEADO', 3, 3);
 INSERT INTO facturas (id, fecha, cantidad, valor_total, pedido_estado, producto_id, cliente_id) VALUES (3, TO_DATE('2024-07-12', 'YYYY-MM-DD'), 1, 18000, 'PENDIENTE', 2, 2);
 
-CREATE OR REPLACE PROCEDURE obtener_total_stock IS
+CREATE OR REPLACE PROCEDURE OBTENER_TOTAL_STOCK IS
 	v_total_stock NUMBER := 0;
 	v_stock_actual NUMBER;
 	v_nombre_producto VARCHAR2(255);
@@ -59,14 +59,11 @@ BEGIN
 
 	DBMS_OUTPUT.PUT_LINE('el stock total es de: ' || v_total_stock);
 END;
-/
 
-BEGIN
-	obtener_total_stock;
-END;
-/
+CALL TALLER11B.obtener_total_stock();
 
-CREATE OR REPLACE PROCEDURE generar_auditoria(
+
+CREATE OR REPLACE PROCEDURE GENERAR_AUDITORIA(
 	p_fecha_inicio DATE,
 	p_fecha_final DATE
 ) IS
@@ -80,14 +77,10 @@ BEGIN
 		END IF;
 	END LOOP;
 END;
-/
 
-BEGIN
-	generar_auditoria(TO_DATE('2020-10-28', 'YYYY-MM-DD'), TO_DATE('2022-02-20', 'YYYY-MM-DD'));
-END;
-/
+CALL TALLER11B.generar_auditoria(TO_DATE('2020-10-28', 'YYYY-MM-DD'), TO_DATE('2022-02-20', 'YYYY-MM-DD'));
 
-CREATE OR REPLACE PROCEDURE simular_ventas_mes IS
+CREATE OR REPLACE PROCEDURE SIMULAR_VENTAS_MES IS
 	dia NUMBER := 1;
 	id_cliente NUMBER;
 	cantidad_vendida NUMBER;
@@ -111,9 +104,6 @@ BEGIN
 		dia := dia + 1;
 	END LOOP;
 END;
-/
 
-BEGIN
-	simular_ventas_mes;
-END;
-/
+CALL TALLER11B.simular_ventas_mes();
+
