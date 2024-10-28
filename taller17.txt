@@ -1,0 +1,128 @@
+// // // Base de datos Biblioteca
+// // // Colección Libros
+
+1. Insertar 20 registros a la colección
+[
+  { "ISBN": "978-3-16-148410-0", "Titulo": "El Quijote", "NombreAutor": "Miguel de Cervantes", "Genero": "Ficción", "Año": 1605 },
+  { "ISBN": "978-0-14-118506-4", "Titulo": "1984", "NombreAutor": "George Orwell", "Genero": "Ciencia Ficción", "Año": 1949 },
+  { "ISBN": "978-1-56619-909-4", "Titulo": "Moby Dick", "NombreAutor": "Herman Melville", "Genero": "Aventura", "Año": 1851 },
+  { "ISBN": "978-0-7432-7359-5", "Titulo": "El Gran Gatsby", "NombreAutor": "F. Scott Fitzgerald", "Genero": "Ficción", "Año": 1925 },
+  { "ISBN": "978-0-394-52340-5", "Titulo": "En Busca del Tiempo Perdido", "NombreAutor": "Marcel Proust", "Genero": "Ficción", "Año": 1913 },
+  { "ISBN": "978-0-679-74185-1", "Titulo": "Cien Años de Soledad", "NombreAutor": "Gabriel García Márquez", "Genero": "Ficción", "Año": 1967 },
+  { "ISBN": "978-0-394-74762-4", "Titulo": "Crimen y Castigo", "NombreAutor": "Fyodor Dostoevsky", "Genero": "Ficción", "Año": 1866 },
+  { "ISBN": "978-1-56619-719-9", "Titulo": "Orgullo y Prejuicio", "NombreAutor": "Jane Austen", "Genero": "Romance", "Año": 1813 },
+  { "ISBN": "978-0-330-40014-9", "Titulo": "El Señor de los Anillos", "NombreAutor": "J.R.R. Tolkien", "Genero": "Fantasía", "Año": 1954 },
+  { "ISBN": "978-0-307-27778-7", "Titulo": "El Alquimista", "NombreAutor": "Paulo Coelho", "Genero": "Ficción", "Año": 1988 },
+  { "ISBN": "978-0-452-28240-1", "Titulo": "La Odisea", "NombreAutor": "Homero", "Genero": "Épica", "Año": -800 },
+  { "ISBN": "978-1-56619-818-9", "Titulo": "Drácula", "NombreAutor": "Bram Stoker", "Genero": "Horror", "Año": 1897 },
+  { "ISBN": "978-0-14-017739-8", "Titulo": "El Retrato de Dorian Gray", "NombreAutor": "Oscar Wilde", "Genero": "Ficción", "Año": 1890 },
+  { "ISBN": "978-0-19-283386-4", "Titulo": "Guerra y Paz", "NombreAutor": "Leo Tolstoy", "Genero": "Ficción", "Año": 1869 },
+  { "ISBN": "978-0-452-27241-0", "Titulo": "Fausto", "NombreAutor": "Johann Wolfgang von Goethe", "Genero": "Drama", "Año": 1808 },
+  { "ISBN": "978-0-00-651297-5", "Titulo": "Don Juan", "NombreAutor": "Lord Byron", "Genero": "Poesía", "Año": 1824 },
+  { "ISBN": "978-0-14-143959-0", "Titulo": "Frankenstein", "NombreAutor": "Mary Shelley", "Genero": "Horror", "Año": 1818 },
+  { "ISBN": "978-0-19-283547-9", "Titulo": "El Paraíso Perdido", "NombreAutor": "John Milton", "Genero": "Poesía", "Año": 1667 },
+  { "ISBN": "978-0-394-70764-2", "Titulo": "Los Miserables", "NombreAutor": "Victor Hugo", "Genero": "Ficción", "Año": 1862 },
+  { "ISBN": "978-0-618-01838-1", "Titulo": "El Hobbit", "NombreAutor": "J.R.R. Tolkien", "Genero": "Fantasía", "Año": 1937 }
+]
+
+2. Actualizar 10 registros de la colección
+query: {ISBN: "978-3-16-148410-0"} 
+$set: {
+  "Titulo": "Don Quijote UPDATED",
+  "NombreAutor": "Miguel de Cervantes Saavedra",
+  "Genero": "Novela",
+  "Año": 1605
+}
+
+query: {ISBN: "978-0-14-118506-4"} 
+$set: {
+  "Titulo": "1984 UPDATED",
+  "NombreAutor": "George Orwell",
+  "Genero": "Distopía",
+  "Año": 1949
+}
+
+query: {ISBN: "978-1-56619-909-4"} 
+$set: {
+  "Titulo": "Moby Dick UPDATED",
+  "NombreAutor": "Herman Melville",
+  "Genero": "Aventura",
+  "Año": 1851
+}
+
+query: {ISBN: "978-0-7432-7359-5"} 
+$set: {
+  "Titulo": "El Gran Gatsby UPDATED",
+  "NombreAutor": "F. Scott Fitzgerald",
+  "Genero": "Ficción",
+  "Año": 1925
+}
+
+query: {ISBN: "978-0-394-52340-5"} 
+$set: {
+  "Titulo": "En Busca del Tiempo Perdido UPDATED",
+  "NombreAutor": "Marcel Proust",
+  "Genero": "Ficción",
+  "Año": 1913
+}
+
+query: {ISBN: "978-0-679-74185-1"} 
+$set: {
+  "Titulo": "Cien Años de Soledad UPDATED",
+  "NombreAutor": "Gabriel García Márquez",
+  "Genero": "Realismo Mágico",
+  "Año": 1967
+}
+
+query: {ISBN: "978-0-394-74762-4"} 
+$set: {
+  "Titulo": "Crimen y Castigo UPDATED",
+  "NombreAutor": "Fyodor Dostoevsky",
+  "Genero": "Ficción",
+  "Año": 1866
+}
+
+query: {ISBN: "978-1-56619-719-9"} 
+$set: {
+  "Titulo": "Orgullo y Prejuicio UPDATED",
+  "NombreAutor": "Jane Austen",
+  "Genero": "Romance",
+  "Año": 1813
+}
+
+query: {ISBN: "978-0-330-40014-9"} 
+$set: {
+  "Titulo": "El Señor de los Anillos UPDATED",
+  "NombreAutor": "J.R.R. Tolkien",
+  "Genero": "Fantasía",
+  "Año": 1954
+}
+
+query: {ISBN: "978-0-307-27778-7"} 
+$set: {
+  "Titulo": "El Alquimista UPDATED",
+  "NombreAutor": "Paulo Coelho",
+  "Genero": "Ficción",
+  "Año": 1988
+} 
+
+// 3. Consultas con cada uno de los operadores
+# Igual a
+{ "edad": 30 }
+# Mayor que
+{ "edad": { "$gt": 30 } }
+# Menor que
+{ "edad": { "$lt": 30 } }
+# Mayor o igual que
+{ "edad": { "$gte": 30 } }
+# Menor o igual que
+{ "edad": { "$lte": 30 } }
+# No igual
+{ "nombre": { "$ne": "Juan" } }
+# In
+{ "ciudad": { "$in": ["Madrid", "Barcelona"] } }
+# And
+{ "$and": [ { "edad": { "$gt": 25 } }, { "ciudad": "Madrid" } ] }
+# Or
+{ "$or": [ { "edad": { "$lt": 25 } }, { "ciudad": "Barcelona" } ] }
+
