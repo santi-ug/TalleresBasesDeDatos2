@@ -1,0 +1,150 @@
+// // // Base de datos Tienda Online
+// // // Colección Productos
+
+// 1. Insertar 10 registros a la colección
+[
+  {
+    "ProductoID": 1,
+    "Nombre": "Camiseta",
+    "Descripción": "Camiseta de algodón",
+    "Precio": 20,
+    "Categoría": { "CategoriaID": 1, "NombreCategoria": "Ropa" },
+    "Comentarios": [
+      { "ComentarioID": 1, "Texto": "Muy cómoda", "Cliente": "Juan" },
+      { "ComentarioID": 2, "Texto": "Buena calidad", "Cliente": "Maria" }
+    ]
+  },
+  {
+    "ProductoID": 2,
+    "Nombre": "Pantalón",
+    "Descripción": "Pantalón de mezclilla",
+    "Precio": 40,
+    "Categoría": { "CategoriaID": 1, "NombreCategoria": "Ropa" },
+    "Comentarios": [
+      { "ComentarioID": 3, "Texto": "Buen ajuste", "Cliente": "Carlos" },
+      { "ComentarioID": 4, "Texto": "Material resistente", "Cliente": "Ana" }
+    ]
+  },
+  {
+    "ProductoID": 3,
+    "Nombre": "Laptop",
+    "Descripción": "Laptop de 14 pulgadas",
+    "Precio": 700,
+    "Categoría": { "CategoriaID": 2, "NombreCategoria": "Electrónica" },
+    "Comentarios": [
+      { "ComentarioID": 5, "Texto": "Rápida y eficiente", "Cliente": "Pedro" },
+      { "ComentarioID": 6, "Texto": "Buena pantalla", "Cliente": "Lucia" }
+    ]
+  },
+  {
+    "ProductoID": 4,
+    "Nombre": "Teléfono",
+    "Descripción": "Teléfono inteligente de 64GB",
+    "Precio": 500,
+    "Categoría": { "CategoriaID": 2, "NombreCategoria": "Electrónica" },
+    "Comentarios": [
+      { "ComentarioID": 7, "Texto": "Excelente cámara", "Cliente": "Miguel" },
+      { "ComentarioID": 8, "Texto": "Buen rendimiento", "Cliente": "Sofia" }
+    ]
+  },
+  {
+    "ProductoID": 5,
+    "Nombre": "Zapatos",
+    "Descripción": "Zapatos deportivos",
+    "Precio": 60,
+    "Categoría": { "CategoriaID": 1, "NombreCategoria": "Ropa" },
+    "Comentarios": [
+      { "ComentarioID": 9, "Texto": "Muy cómodos", "Cliente": "Luis" },
+      { "ComentarioID": 10, "Texto": "Buena calidad", "Cliente": "Laura" }
+    ]
+  },
+  {
+    "ProductoID": 6,
+    "Nombre": "Televisor",
+    "Descripción": "Televisor de 55 pulgadas",
+    "Precio": 900,
+    "Categoría": { "CategoriaID": 2, "NombreCategoria": "Electrónica" },
+    "Comentarios": [
+      { "ComentarioID": 11, "Texto": "Gran calidad de imagen", "Cliente": "Andres" },
+      { "ComentarioID": 12, "Texto": "Fácil de instalar", "Cliente": "Monica" }
+    ]
+  },
+  {
+    "ProductoID": 7,
+    "Nombre": "Auriculares",
+    "Descripción": "Auriculares inalámbricos",
+    "Precio": 30,
+    "Categoría": { "CategoriaID": 2, "NombreCategoria": "Electrónica" },
+    "Comentarios": [
+      { "ComentarioID": 13, "Texto": "Buen sonido", "Cliente": "Carlos" },
+      { "ComentarioID": 14, "Texto": "Cómodos", "Cliente": "Paola" }
+    ]
+  },
+  {
+    "ProductoID": 8,
+    "Nombre": "Mochila",
+    "Descripción": "Mochila resistente al agua",
+    "Precio": 45,
+    "Categoría": { "CategoriaID": 1, "NombreCategoria": "Accesorios" },
+    "Comentarios": [
+      { "ComentarioID": 15, "Texto": "Práctica y duradera", "Cliente": "Natalia" },
+      { "ComentarioID": 16, "Texto": "Mucho espacio", "Cliente": "Daniel" }
+    ]
+  },
+  {
+    "ProductoID": 9,
+    "Nombre": "Reloj",
+    "Descripción": "Reloj digital",
+    "Precio": 25,
+    "Categoría": { "CategoriaID": 1, "NombreCategoria": "Accesorios" },
+    "Comentarios": [
+      { "ComentarioID": 17, "Texto": "Bonito diseño", "Cliente": "Diego" },
+      { "ComentarioID": 18, "Texto": "Fácil de usar", "Cliente": "Patricia" }
+    ]
+  },
+  {
+    "ProductoID": 10,
+    "Nombre": "Altavoz",
+    "Descripción": "Altavoz Bluetooth",
+    "Precio": 35,
+    "Categoría": { "CategoriaID": 2, "NombreCategoria": "Electrónica" },
+    "Comentarios": [
+      { "ComentarioID": 19, "Texto": "Buena calidad de sonido", "Cliente": "Gina" },
+      { "ComentarioID": 20, "Texto": "Compacto y potente", "Cliente": "Esteban" }
+    ]
+  }
+]
+
+// 2. Consultas solicitadas
+
+// Obtener los productos sin categorías ni comentarios
+db.Productos.find(
+  {
+    "Categoría": { "$exists": false },
+    "Comentarios": { "$exists": false }
+  }
+)
+
+// Obtener los productos junto con las categorías
+db.Productos.find(
+  {},
+  {
+    "ProductoID": 1,
+    "Nombre": 1,
+    "Descripción": 1,
+    "Precio": 1,
+    "Categoría": 1
+  }
+)
+
+// Obtener los productos junto con los comentarios
+db.Productos.find(
+  {},
+  {
+    "ProductoID": 1,
+    "Nombre": 1,
+    "Descripción": 1,
+    "Precio": 1,
+    "Comentarios": 1
+  }
+)
